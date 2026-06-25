@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>光合作用：光反应与暗反应 2D 动态模型</title>
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app" aria-label="光合作用光反应和暗反应动态模型" data-step="0">
+      <section class="stage">
+        <div class="scene-top">
+          <div>
+            <p class="kicker">叶绿体中的能量转换</p>
+            <h1>光反应与暗反应的场所和过程</h1>
+          </div>
+          <div class="equation" aria-label="光合作用总反应式">
+            <span class="eq-side">CO<sub>2</sub> + H<sub>2</sub>O</span>
+            <span class="reaction-arrow" aria-label="光能，叶绿体">
+              <span class="arrow-top">光能</span>
+              <span class="arrow-line"></span>
+              <span class="arrow-bottom">叶绿体</span>
+            </span>
+            <span class="eq-side"><span class="sugar-product">(CH<sub>2</sub>O)</span> + O<sub>2</sub></span>
+          </div>
+        </div>
+
+        <section class="lesson-player" aria-label="动态演示控制">
+          <div class="step-info">
+            <span id="stepIndex">第 1 步 / 7</span>
+            <strong id="stepTitle">光反应启动</strong>
+            <p id="stepText">光能进入类囊体薄膜，启动光反应。</p>
+            <div class="learning-cue">
+              <b>探索目标</b>
+              <span id="taskText">从光反应开始，点亮第 1 个节点：光反应。</span>
+            </div>
+            <div class="feedback" id="feedbackText" aria-live="polite">先判断，再点击。点中后会解锁下一步。</div>
+          </div>
+          <div class="player-controls">
+            <button type="button" id="prevStep" aria-label="上一步">‹</button>
+            <button type="button" id="playStep">演示</button>
+            <button type="button" id="nextStep" aria-label="下一步">›</button>
+          </div>
+          <div class="step-track" aria-hidden="true">
+            <span class="active"></span><span></span><span></span><span></span><span></span><span></span><span></span>
+          </div>
+        </section>
+
+        <div class="chloroplast">
+          <div class="chloroplast-rim"></div>
+          <div class="stroma-grid"></div>
+          <div class="location-tag stroma-tag">叶绿体基质</div>
+          <div class="location-tag thylakoid-tag">类囊体薄膜</div>
+          <button type="button" class="hotspot spot-light" data-hotspot="0" aria-label="点击光反应">
+            <span>1 光反应</span>
+          </button>
+          <button type="button" class="hotspot spot-water" data-hotspot="1" aria-label="点击水的光解">
+            <span>2 水的光解</span>
+          </button>
+          <button type="button" class="hotspot spot-atp" data-hotspot="2" aria-label="点击 ATP 的形成">
+            <span>3 ATP 形成</span>
+          </button>
+          <button type="button" class="hotspot spot-nadph" data-hotspot="3" aria-label="点击 NADPH 的形成">
+            <span>4 NADPH 形成</span>
+          </button>
+          <button type="button" class="hotspot spot-co2" data-hotspot="4" aria-label="点击二氧化碳固定">
+            <span>5 CO₂ 固定</span>
+          </button>
+          <button type="button" class="hotspot spot-c3" data-hotspot="5" aria-label="点击碳三的还原">
+            <span>6 C₃ 还原</span>
+          </button>
+          <button type="button" class="hotspot spot-return" data-hotspot="6" aria-label="点击 NADP+ 和 ADP Pi 返回光反应">
+            <span>7 返回光反应</span>
+          </button>
+
+          <section class="reaction light-side" aria-label="光反应">
+            <header>
+              <span class="badge">光反应</span>
+              <h2>场所：类囊体薄膜</h2>
+            </header>
+
+            <div class="sun" aria-hidden="true">
+              <span></span><span></span><span></span><span></span>
+            </div>
+
+            <div class="thylakoid-stack" aria-hidden="true">
+              <div class="disc d1"></div>
+              <div class="disc d2"></div>
+              <div class="disc d3"></div>
+              <div class="disc d4"></div>
+              <div class="disc d5"></div>
+              <div class="disc d6"></div>
+              <div class="disc d7"></div>
+              <div class="disc d8"></div>
+              <div class="membrane-glow"></div>
+            </div>
+
+            <div class="light-beams" aria-hidden="true">
+              <i></i><i></i><i></i><i></i><i></i>
+            </div>
+
+            <div class="molecule water">H<sub>2</sub>O</div>
+            <div class="molecule oxygen">O<sub>2</sub> ↑</div>
+            <div class="molecule protons">H<sup>+</sup> + e<sup>-</sup></div>
+            <div class="process-arrow water-in"><span>水进入</span></div>
+            <div class="process-arrow oxygen-out"><span>释放氧气</span></div>
+            <div class="process-arrow reducing-out"><span>形成还原力</span></div>
+
+            <div class="formula-panel light-formulas">
+              <p data-step-target="1"><strong>水的光解</strong><span class="chem">2H<sub>2</sub>O → O<sub>2</sub> + 4H<sup>+</sup> + 4e<sup>-</sup></span></p>
+              <p data-step-target="2"><strong>ATP 合成</strong><span class="chem">ADP + Pi + 能量 → ATP</span></p>
+              <p data-step-target="3"><strong>NADPH 合成</strong><span class="chem">NADP<sup>+</sup> + H<sup>+</sup> + 2e<sup>-</sup> → NADPH</span></p>
+            </div>
+          </section>
+
+          <div class="energy-bridge" aria-label="光反应为暗反应提供 ATP 和 NADPH">
+            <div class="bridge-title">能量传递</div>
+            <div class="bridge-line forward"></div>
+            <div class="bridge-line return"></div>
+            <div class="energy-card atp">ATP</div>
+            <div class="energy-card nadph">NADPH</div>
+            <div class="energy-card adp">ADP + Pi</div>
+            <div class="energy-card nadp">NADP<sup>+</sup></div>
+            <p>光反应提供 ATP、NADPH；暗反应消耗后返回 ADP + Pi、NADP<sup>+</sup></p>
+          </div>
+
+          <section class="reaction dark-side" aria-label="暗反应">
+            <header>
+              <span class="badge dark">暗反应</span>
+              <h2>场所：叶绿体基质</h2>
+            </header>
+
+            <div class="calvin-cycle" aria-hidden="true">
+              <svg viewBox="0 0 360 320" role="img" aria-label="卡尔文循环">
+                <defs>
+                  <marker id="arrowHead" markerWidth="7" markerHeight="7" refX="5.2" refY="3.5" orient="auto">
+                    <path d="M0,0 L6.2,3.5 L0,7 Z"></path>
+                  </marker>
+                </defs>
+                <path class="cycle-path cycle-path-a" d="M112 82 C176 34 282 66 300 132" />
+                <path class="cycle-path cycle-path-b" d="M300 174 C258 278 112 282 72 192 C54 150 70 106 112 82" />
+                <path class="cycle-progress" d="M112 82 C176 34 282 66 300 132 M300 174 C258 278 112 282 72 192 C54 150 70 106 112 82" />
+              </svg>
+              <div class="cycle-label co2">CO<sub>2</sub></div>
+              <div class="cycle-label c5">C<sub>5</sub></div>
+              <div class="cycle-label c3">2C<sub>3</sub></div>
+              <div class="cycle-label sugar">(CH<sub>2</sub>O)</div>
+              <div class="cycle-dot dot1"></div>
+              <div class="cycle-dot dot2"></div>
+              <div class="cycle-dot dot3"></div>
+            </div>
+
+            <div class="formula-panel dark-formulas">
+              <p class="formula-row" data-step-target="4"><strong>CO<sub>2</sub> 固定</strong><span class="chem">CO<sub>2</sub> + C<sub>5</sub> → 2C<sub>3</sub></span></p>
+              <div class="formula-equation" data-step-target="5" aria-label="C3 的还原反应式">
+                <strong>C<sub>3</sub> 还原</strong>
+                <span class="chem">2C<sub>3</sub></span>
+                <span class="reaction-arrow compact" aria-label="酶，ATP 和 NADPH">
+                  <span class="arrow-top">酶</span>
+                  <span class="arrow-line"></span>
+                  <span class="arrow-bottom">ATP、NADPH</span>
+                </span>
+                <span class="chem product-side"><span>C<sub>5</sub></span><span class="formula-plus">+</span><span class="sugar-product">(CH<sub>2</sub>O)</span></span>
+              </div>
+            </div>
+          </section>
+
+          <div class="flow-particles" aria-hidden="true">
+            <span class="p p1"></span><span class="p p2"></span><span class="p p3"></span>
+            <span class="p p4"></span><span class="p p5"></span><span class="p p6"></span>
+          </div>
+        </div>
+
+        <footer class="summary">
+          <div>
+            <span>能量变化</span>
+            <strong>光能 → ATP、NADPH 中活跃的化学能 → 有机物中稳定的化学能</strong>
+          </div>
+          <div>
+            <span>物质变化</span>
+            <strong>H<sub>2</sub>O 释放 O<sub>2</sub>；CO<sub>2</sub> 被固定并还原为糖类</strong>
+          </div>
+        </footer>
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
